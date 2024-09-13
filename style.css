@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #f5f5f5; /* Light text color for contrast on dark background */
+  background-color: #0b0b0b; /* Dark background similar to X */
+  padding-top: 60px; /* To account for fixed navbar */
+}
+a {
+  font-size: 1.5rem;
+  color: #f5f5f5;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent; /* Transparent background */
+  padding: 1rem 2rem; /* Added horizontal padding */
+  display: flex; /* Ensure it's displayed by default */
+  justify-content: space-around;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Adds a subtle blur for depth */
+  border-bottom: 1px solid #f5f5f5;
+  border-bottom-left-radius: 10px; /* Added border radius for padding at edges */
+  border-bottom-right-radius: 10px; /* Added border radius for padding at edges */
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin: 5px; /* Add some margin for spacing */
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  /* background-color: rgba(255, 255, 255, 0.1); * /* Subtle hover effect */
+}
+
+section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+}
+
+.home-logo {
+  font-size: 6rem;
+  color: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #757c82;
+  padding-bottom: 20px;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Full width to ensure proper spacing */
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+h1 {
+  transition: text-shadow 0.3s;
+}
+
+h1:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+.social-links img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide the navbar on mobile */
+  }
+
+  body {
+    padding-top: 0; /* Remove top padding when navbar is hidden */
+  }
+
+  .home-logo {
+    font-size: 4rem; /* 25% smaller than 2rem */
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navbar-container {
+    width: auto; /* Allow container to shrink on larger screens */
+  }
+
+  .navbar a {
+    white-space: nowrap; /* Prevent text wrapping within links */
+  }
+}
+
+.subtitle:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}

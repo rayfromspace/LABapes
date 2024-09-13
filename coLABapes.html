@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coLABapes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="monkey.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#about">coLABapes</a>
+        <a href="#services">Aping in</a>
+        <a href="#socials">Follow Us</a>
+      </div>
+    </nav>
+
+    <section id="about">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          flex-direction: column;
+          color: #f5f5f5;
+        "
+      >
+        <h1 class="home-logo">coLABapes</h1>
+        <p
+          class="subtitle"
+          style="text-align: center; font-size: 1.5rem; color: #757c82"
+        >
+          Aping to a BILLION
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 style="text-align: center">Aping to a BILLION</h2>
+
+      <p style="text-align: center; font-size: 1.3rem; padding: 0, 50px">
+        In today's digital landscape, creativity and innovation are no longer
+        confined by geography or traditional tools. At coLABapes, we're
+        leveraging AI to turn creative ventures into global successes for the
+        community 1 Billion dollars in revenue in 10 years.
+      </p>
+      <div style="display: flex; justify-content: center; margin-top: 20px">
+        <a
+          href="https://discord.gg/xU5zNczM"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="discord-mark-white.svg"
+            alt="Join our Discord"
+            style="width: 60px; height: 60px"
+          />
+          <p style="margin-top: 10px">Join our Discord</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="socials">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a
+          href="https://www.facebook.com/colabapes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="facebook_logo_icon.png" alt="Follow on Facebook" />
+        </a>
+        <a
+          href="https://www.youtube.com/yourchannel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="youtube_logo_icon.png" alt="Subscribe on YouTube" />
+        </a>
+        <a
+          href="https://www.tiktok.com/@coLABapes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="tiktok-512.png" alt="Follow on TikTok" />
+        </a>
+        <a
+          href="https://twitter.com/coLABapes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="twitter_logo_icon.png" alt="Follow on X (Twitter)" />
+        </a>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let touchstartX = 0;
+        let touchendX = 0;
+        const sections = document.querySelectorAll("section");
+        let currentSectionIndex = 0;
+
+        function handleGesture() {
+          if (touchendX < touchstartX) navigateToSection(1); // Swipe left
+          if (touchendX > touchstartX) navigateToSection(-1); // Swipe right
+        }
+
+        function navigateToSection(direction) {
+          currentSectionIndex += direction;
+          if (currentSectionIndex < 0)
+            currentSectionIndex = sections.length - 1;
+          if (currentSectionIndex >= sections.length) currentSectionIndex = 0;
+          sections[currentSectionIndex].scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.addEventListener("touchstart", (e) => {
+          touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener("touchend", (e) => {
+          touchendX = e.changedTouches[0].screenX;
+          handleGesture();
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
